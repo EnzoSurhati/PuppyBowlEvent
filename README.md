@@ -20,3 +20,5 @@ Note: The code is _not_ functional yet! `npm run dev` will serve a broken page u
 ## Submission
 
 Please submit the link to your GitHub repository.
+
+Netlify link: https://papaya-meerkat-585ae3.netlify.app/
