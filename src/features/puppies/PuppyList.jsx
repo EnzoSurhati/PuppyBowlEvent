@@ -1,17 +1,17 @@
-/**
- * @component
- * Shows a list of puppies in the roster.
- * Users can select a puppy to see more information about it.
- */
+import React from "react";
+import { useGetPuppiesQuery } from "./puppySlice";
+
 export default function PuppyList({ setSelectedPuppyId }) {
-  // TODO: Get data from getPuppies query
+  const { data: puppies, error, isLoading } = useGetPuppiesQuery();
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error loading...</p>;
 
   return (
     <article>
       <h2>Roster</h2>
       <ul className="puppies">
         {isLoading && <li>Loading puppies...</li>}
-        {puppies.map((p) => (
+        {puppies?.data?.players.map((p) => (
           <li key={p.id}>
             <h3>
               {p.name} #{p.id}
